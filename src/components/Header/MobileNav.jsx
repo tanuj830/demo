@@ -4,25 +4,44 @@ import {BsPeople} from 'react-icons/bs'
 import {CgMenuBoxed} from 'react-icons/cg'
 import Link from 'next/link'
 const mobileNav = () => {
+
+    const [isActive, setIsActive] = React.useState(0)
+
+    const links = [
+        {
+            "name": "home",
+            "icon": <AiOutlineHome/>
+        },
+        {
+            "name": "menu",
+            "icon": <CgMenuBoxed/>
+        },
+        {
+            "name": "about",
+            "icon": <BsPeople/>
+        },
+        {
+            "name": "contact",
+            "icon": <AiOutlineContacts/>
+        },
+    ]
+
+    const handleClick = (ind) =>{
+        setIsActive(ind)
+    }
   return (
-    <div className=' bg-white z-[100] border-t-2 w-full py-2'>
+    <div className=' bg-white border-t-2 w-full py-2'>
         <div className='flex items-center justify-around text-slate-400'>
-            <div className='flex flex-col items-center justify-center'>
-                <span className='text-2xl'><AiOutlineHome/></span>
-                <Link href="/" className='text-sm'>Home</Link>
+           {
+            links.map((link, ind)=>(
+                <div onClick={ind=>handleClick(ind)} className='flex flex-col items-center justify-center'>
+                {
+                    isActive === ind ? <div className='text-2xl text-black'>{link.icon}</div>: <div className='text-2xl'>{link.icon}</div>
+                }
+                <Link href={"/" +(link.name !== "home" ? link.name: "/")} className='text-sm'>{link.name}</Link>
             </div>
-            <div className='flex flex-col items-center justify-center'>
-                <span className='text-2xl'><CgMenuBoxed/></span>
-                <Link href="/" className='text-sm'>Menu</Link>
-            </div>
-            <div className='flex flex-col items-center justify-center'>
-                <span className='text-2xl bg-transparent'><BsPeople/></span>
-                <Link href="/" className='text-sm'>About</Link>
-            </div>
-            <div className='flex flex-col items-center justify-center'>
-                <span className='text-2xl'><AiOutlineContacts/></span>
-                <Link href="/" className='text-sm'>Contact</Link>
-            </div>
+            ))
+           }
         </div>
     </div>
   )

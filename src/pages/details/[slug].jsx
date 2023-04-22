@@ -3,7 +3,7 @@ import axios from "axios";
 import { FiPhoneCall } from "react-icons/fi";
 import { FcOnlineSupport } from "react-icons/fc";
 import { useRouter } from "next/router";
-import Navbar from "@/components/Header/Navbar";
+import Navbar from "@/components/Header/PCNavbar";
 import Link from "next/link";
 const Details = ({ data }) => {
 //   console.log(data);

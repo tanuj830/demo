@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
-import Navbar from '@/components/Header/Navbar'
+import Navbar from '@/components/Header/PCNavbar'
 import MobileNav from '@/components/Header/MobileNav'
 import {FiPhoneCall} from 'react-icons/fi'
 import {AiOutlineMail} from 'react-icons/ai'
@@ -10,6 +10,7 @@ import Link from 'next/link'
 import Footer from '@/components/Footer/Footer'
 import Hero from '@/components/Hero/Hero'
 import Hero2 from '@/components/Hero/Hero2'
+import Hero3 from '@/components/Hero/Hero3'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
@@ -21,12 +22,16 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com"/>
+     
+ 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin></link>
       </Head>
+      
             <div className='hidden w-full md:block'><Navbar/></div>
-            <div className='block w-full md:hidden fixed  bottom-0'><MobileNav/></div>
+            <div className='block w-full md:hidden  fixed  bottom-0'  ><MobileNav/></div>
             <Hero/>
             <Hero2/>
+            <Hero3/>
     </>
   )
 }

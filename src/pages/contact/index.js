@@ -27,7 +27,7 @@ const Contact = () => {
   return (
     <>
     <Navbar/>
-    <div className='flex items-center justify-center flex-col mt-10'>
+    <div className='flex items-center justify-center flex-col mt-10 mb-56'>
       <h3 className='text-3xl font-semibold'>Contact Us</h3>
       <small>We’d love to hear from you! Here’s how you can reach us.</small>
 
@@ -65,7 +65,6 @@ const Contact = () => {
                     </form>
       </div>
     </div>
-    <Footer/>
     </>
   )
 }
