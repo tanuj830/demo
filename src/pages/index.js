@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
-import Navbar from '@/components/Header/PCNavbar'
+import Navbar from '@/components/Header/Navbar'
 import MobileNav from '@/components/Header/MobileNav'
 import {FiPhoneCall} from 'react-icons/fi'
 import {AiOutlineMail} from 'react-icons/ai'
@@ -27,11 +27,11 @@ export default function Home() {
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin></link>
       </Head>
       
-            <div className='hidden w-full md:block'><Navbar/></div>
-            <div className='block w-full md:hidden  fixed  bottom-0'  ><MobileNav/></div>
+          <Navbar/>
             <Hero/>
             <Hero2/>
             <Hero3/>
+            <Footer/>
     </>
   )
 }
